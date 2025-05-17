@@ -44,6 +44,7 @@ Also take a frame from your video as an external reference for calibration
 ![cam02 - 文件资源管理器 2025_5_17 18_34_10](https://github.com/user-attachments/assets/ce1dd739-d033-4e9a-94b6-d46bf34b0fd8)
 
 Then translate this section(calibration.calculate.extrinsics.scene]) in the Config file
+![rotate_camera py – Config toml 2025_5_17 18_35_15](https://github.com/user-attachments/assets/8ec230c3-0d30-4577-bd47-1671b473e9a7)
 
 "object_coords_3d"must be translated. Manually measure the 3D coordinates of 10 or more points in the scene
 We use the four corners of the floor tile as a reference, and each floor tile is 80cm in length and width.
@@ -76,8 +77,8 @@ Theoretically, the Offset is 0. If offset is too large, it will cause errors.
 ![C__Windows_system32_cmd exe - _E__Anaconda3_condabin_conda bat_  activate Pose2Sim 2025_5_17 18_55_03](https://github.com/user-attachments/assets/dbbfaf8c-e8fe-4117-819c-0d9c7e6a046c)
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
-run Pose2Sim.personAssociation() if There are more than two people in the video 
-else pass this
+run Pose2Sim.personAssociation() if There are more than two people in the video .
+else , pass this
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 run Pose2Sim.triangulation()
