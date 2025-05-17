@@ -26,7 +26,7 @@ https://github.com/user-attachments/assets/7af3a238-14e3-4549-8331-4e9c9051003d
 Extract Frames:
 ![cam01 - 文件资源管理器 2025_5_17 18_15_22](https://github.com/user-attachments/assets/35707035-cf5b-4407-9dd4-8b78090f39f2)
 
-Then translate this section(calibration.calculate) in the Config file
+Then translate this section(calibration.calculate) in the Config file.
 ![rotate_camera py – Config toml 2025_5_17 18_19_09](https://github.com/user-attachments/assets/65f1d4a9-a0c5-4ba7-be16-83cac69a9997)
 
 Translate 
@@ -35,18 +35,18 @@ Translate
 3. "overwrite_intrinsics"  Intrinsic parameters usually need to be calculated only once in their lifetime.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
-Record the videos and put them in the Videos folder in order(cam01 - cam02 -cam03 - cam04 and so on)
+Record the videos and put them in the Videos folder in order(cam01 - cam02 -cam03 - cam04 and so on).
 ![videos - 文件资源管理器 2025_5_17 18_28_38](https://github.com/user-attachments/assets/35714554-901b-4f56-9058-bb03b6a95425)
 https://github.com/user-attachments/assets/696546e6-277e-4ee1-a22b-9e2a615b68b0
 
-Also take a frame from your video as an external reference for calibration
+Also take a frame from your video as an external reference for calibration.
 ![01](https://github.com/user-attachments/assets/86ef1686-fcd2-42d6-9e10-0542de39ccf0)
 ![cam02 - 文件资源管理器 2025_5_17 18_34_10](https://github.com/user-attachments/assets/ce1dd739-d033-4e9a-94b6-d46bf34b0fd8)
 
-Then translate this section(calibration.calculate.extrinsics.scene]) in the Config file
+Then translate this section(calibration.calculate.extrinsics.scene]) in the Config file.
 ![rotate_camera py – Config toml 2025_5_17 18_35_15](https://github.com/user-attachments/assets/8ec230c3-0d30-4577-bd47-1671b473e9a7)
 
-"object_coords_3d"must be translated. Manually measure the 3D coordinates of 10 or more points in the scene
+"object_coords_3d"must be translated. Manually measure the 3D coordinates of 10 or more points in the scene.
 We use the four corners of the floor tile as a reference, and each floor tile is 80cm in length and width.
 So my object_coords_3d is
 [[0.0 , 0.0 , 0.0],
@@ -57,10 +57,10 @@ So my object_coords_3d is
 [1.6 , 0.8 , 0.0]]
 
 
-Note"extrinsics_extension" change your entension(jpg or png)
+Note"extrinsics_extension" change your entension(jpg or png).
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
-run Pose2Sim.calibration()
+run Pose2Sim.calibration().
 I have calibrated the internal reference before and set "overwrite_intrinsics" to false, so I will start with the external reference.
 ![C__Windows_system32_cmd exe - _E__Anaconda3_condabin_conda bat_  activate Pose2Sim 2025_5_17 18_44_17](https://github.com/user-attachments/assets/61cd17ff-1c2e-416d-aa3b-f5b57d5faa07)
 
@@ -68,7 +68,7 @@ I have calibrated the internal reference before and set "overwrite_intrinsics" t
 run Pose2Sim.poseEstimation()
 ![C__Windows_system32_cmd exe - _E__Anaconda3_condabin_conda bat_  activate Pose2Sim 2025_5_17 18_47_27](https://github.com/user-attachments/assets/1bc15b07-ec1e-4b96-a9c4-d50bac33e2d5)
 
-If you get an error at this step, set "pose_model" (in Config) to 'HALPE_26'
+If you get an error at this step, set "pose_model" (in Config) to 'HALPE_26'.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 run Pose2Sim.synchronization()
@@ -78,7 +78,7 @@ Theoretically, the Offset is 0. If offset is too large, it will cause errors.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 run Pose2Sim.personAssociation() if There are more than two people in the video .
-else , pass this
+else , pass this.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 run Pose2Sim.triangulation()
@@ -87,14 +87,14 @@ If you encounter like "no person" and other problems,I suggest recalibrating the
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 run Pose2Sim.filtering()
-Generally this step will not go wrong
+Generally this step will not go wrong.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 I passed Pose2Sim.markerAugmentation() and run Pose2Sim.kinematics()
 ![C__Windows_system32_cmd exe - _E__Anaconda3_condabin_conda bat_  activate Pose2Sim 2025_5_17 19_03_58](https://github.com/user-attachments/assets/7d4db3ce-27b5-47df-825f-4709ff4e0f2e)
 
-If total squared error is bigger than 1.0 the kinematics results are so bad
-recalibrating the external parameters usually can solve this
+If total squared error is bigger than 1.0 the kinematics results are so bad.
+recalibrating the external parameters usually can solve this.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 our OpenSim motion
