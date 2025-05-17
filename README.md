@@ -40,7 +40,7 @@ Record the videos and put them in the Videos folder in order(cam01 - cam02 -cam0
 https://github.com/user-attachments/assets/696546e6-277e-4ee1-a22b-9e2a615b68b0
 
 Also take a frame from your video as an external reference for calibration.
-![01](https://github.com/user-attachments/assets/86ef1686-fcd2-42d6-9e10-0542de39ccf0)
+![01](https://github.com/user-attachments/assets/ba918a7d-e627-496a-aa9f-6f5577e3f686)
 ![cam02 - 文件资源管理器 2025_5_17 18_34_10](https://github.com/user-attachments/assets/ce1dd739-d033-4e9a-94b6-d46bf34b0fd8)
 
 Then translate this section(calibration.calculate.extrinsics.scene]) in the Config file.
